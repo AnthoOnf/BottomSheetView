@@ -25,7 +25,7 @@ The bottom sheet tries to be smart about the height it takes. If the view contro
 
 Using a BottomSheetView is simple.
 
-__The constructor is_ `new BottomShetView(controller, sizes)`. Sizes is optional, but if specified, the first size in the array will determine the initial size of the sheet, and the others sizes will be all the sizes that the component can take.__
+__The constructor is_ `new BottomShetView(controller, sizes)`. Sizes is optional, but if specified, the first size in the array will determine the initial size of the sheet, and the others sizes will be all the sizes that the component can take._
 
 ****Using default settings with fixed height****
 
