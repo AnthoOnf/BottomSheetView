@@ -13,9 +13,9 @@ namespace BottomSheetView.Sources
         public bool DismissOnBackgroundTap = true;
         public UIViewController ChildViewController { get; private set; }
 
-        private SheetSize _containerSize = SheetSize.Fixed(520f);
-        private SheetSize _actualContainerSize = SheetSize.Fixed(520f);
-        private SheetSize[] _orderedSheetSize = { SheetSize.Fixed(520f), SheetSize.FullScreen };
+        private SheetSize _containerSize = SheetSize.Fixed(300f);
+        private SheetSize _actualContainerSize = SheetSize.Fixed(300f);
+        private SheetSize[] _orderedSheetSize = { SheetSize.Fixed(300f), SheetSize.FullScreen };
 
         private CGPoint _firstPanPoint = CGPoint.Empty;
         private UIColor _overlayColor => UIColor.FromRGBA(0, 0, 0, (int)70 * 255);
@@ -23,8 +23,14 @@ namespace BottomSheetView.Sources
         private InitialTouchPanGestureRecognizer _panGestureRecognizer;
         private UIScrollView _childScrollView { get; set; }
 
-        public BottomSheetViewController() : base()
+        public BottomSheetViewController(UIViewController controller, SheetSize[] sizes) : base()
         {
+            ChildViewController = controller;
+            _containerHeightConstraint = new NSLayoutConstraint();
+            if (sizes.Count() > 0)
+                SetSizes(sizes, false);
+            this.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+
             this.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
         }
 
@@ -68,15 +74,6 @@ namespace BottomSheetView.Sources
             insets.Top = (float)Math.Max(insets.Top, 20);
 
             return insets;
-        }
-
-        public void Init(UIViewController controller, SheetSize[] sizes)
-        {
-            ChildViewController = controller;
-            _containerHeightConstraint = new NSLayoutConstraint();
-            if (sizes.Count() > 0)
-                SetSizes(sizes, false);
-            this.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
         }
 
         public void SetSizes(SheetSize[] sizes, bool animated = true)
