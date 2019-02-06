@@ -27,30 +27,29 @@ namespace BottomSheetView
         {
             var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("DynamicHeightController");
 
-            SheetSize[] sheetSizes = { };
-            var bottomSheetViewController = new BottomSheetViewController(controller, sheetSizes);
+            var bottomSheetViewController = new BottomSheetViewController(controller);
 
             this.PresentModalViewController(bottomSheetViewController, false);
         }
 
         partial void FixedHeight_TouchUpInside(UIButton sender)
         {
-            throw new NotImplementedException();
+            var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("DynamicHeightController");
+
+            SheetSize[] sheetSizes = { SheetSize.Fixed(300f) };
+            var bottomSheetViewController = new BottomSheetViewController(controller, sheetSizes);
+
+            this.PresentModalViewController(bottomSheetViewController, false);
         }
 
         partial void NavigationController_TouchUpInside(UIButton sender)
         {
-            throw new NotImplementedException();
-        }
+            var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("BottomSheetNavigationController");
 
-        partial void SelfSizing_TouchUpInside(UIButton sender)
-        {
-            throw new NotImplementedException();
-        }
+            SheetSize[] sheetSizes = { SheetSize.Fixed(300f) };
+            var bottomSheetViewController = new BottomSheetViewController(controller, sheetSizes);
 
-        partial void ScrollView_TouchUpInside(UIButton sender)
-        {
-            throw new NotImplementedException();
+            this.PresentModalViewController(bottomSheetViewController, false);
         }
     }
 }

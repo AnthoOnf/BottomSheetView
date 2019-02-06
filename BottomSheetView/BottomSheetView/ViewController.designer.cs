@@ -20,12 +20,6 @@ namespace BottomSheetView
 
 		[Action ("NavigationController_TouchUpInside:")]
 		partial void NavigationController_TouchUpInside (UIKit.UIButton sender);
-
-		[Action ("ScrollView_TouchUpInside:")]
-		partial void ScrollView_TouchUpInside (UIKit.UIButton sender);
-
-		[Action ("SelfSizing_TouchUpInside:")]
-		partial void SelfSizing_TouchUpInside (UIKit.UIButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

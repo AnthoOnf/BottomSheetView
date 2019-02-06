@@ -23,14 +23,12 @@ namespace BottomSheetView.Sources
         private InitialTouchPanGestureRecognizer _panGestureRecognizer;
         private UIScrollView _childScrollView { get; set; }
 
-        public BottomSheetViewController(UIViewController controller, SheetSize[] sizes) : base()
+        public BottomSheetViewController(UIViewController controller, SheetSize[] sizes = null) : base()
         {
             ChildViewController = controller;
             _containerHeightConstraint = new NSLayoutConstraint();
-            if (sizes.Count() > 0)
+            if (sizes != null && sizes.Count() > 0)
                 SetSizes(sizes, false);
-            this.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
-
             this.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
         }
 
