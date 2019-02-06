@@ -20,7 +20,7 @@ namespace BottomSheetView.Sources
         private SheetSize[] _orderedSheetSize = { SheetSize.Fixed(300f), SheetSize.FullScreen };
 
         private CGPoint _firstPanPoint = CGPoint.Empty;
-        private UIColor _overlayColor => UIColor.FromRGBA(0, 0, 0, (int)70 * 255);
+        public UIColor OverlayColor => UIColor.FromRGBA(0, 0, 0, (int)70 * 255);
         private NSLayoutConstraint _containerHeightConstraint;
         private InitialTouchPanGestureRecognizer _panGestureRecognizer;
         private UIScrollView _childScrollView { get; set; }
@@ -60,7 +60,7 @@ namespace BottomSheetView.Sources
             base.ViewDidAppear(animated);
             UIView.Animate(0.3, 0, UIViewAnimationOptions.CurveEaseOut, () =>
             {
-                this.View.BackgroundColor = _overlayColor;
+                this.View.BackgroundColor = OverlayColor;
                 ContainerView.Transform = CGAffineTransform.MakeIdentity();
                 _actualContainerSize = SheetSize.Fixed((float)ContainerView.Frame.Height);
             }, null);
