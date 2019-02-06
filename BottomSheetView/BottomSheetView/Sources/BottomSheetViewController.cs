@@ -4,7 +4,7 @@ using CoreGraphics;
 using Foundation;
 using UIKit;
 
-namespace BottomSheetView
+namespace BottomSheetView.Sources
 {
     public class BottomSheetViewController : UIViewController, IUIGestureRecognizerDelegate
     {
