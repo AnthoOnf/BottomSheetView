@@ -8,9 +8,11 @@ namespace BottomSheetView.Sources
 {
     public class BottomSheetViewController : UIViewController, IUIGestureRecognizerDelegate
     {
+        public bool DismissOnBackgroundTap = true;
+        public bool RoundTopCorner = true;
+
         public UIView ContainerView = new UIView();
         public UIView PullBarView = new UIView();
-        public bool DismissOnBackgroundTap = true;
         public UIViewController ChildViewController { get; private set; }
 
         private SheetSize _containerSize = SheetSize.Fixed(300f);
@@ -132,9 +134,13 @@ namespace BottomSheetView.Sources
             ContainerView.AddConstraint(NSLayoutConstraint.Create(ContainerView, NSLayoutAttribute.Leading, NSLayoutRelation.Equal, ChildViewController.View, NSLayoutAttribute.Leading, 1, 0));
             ContainerView.AddConstraint(NSLayoutConstraint.Create(ContainerView, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, ChildViewController.View, NSLayoutAttribute.Trailing, 1, 0));
 
-            ChildViewController.View.Layer.MaskedCorners = CoreAnimation.CACornerMask.MaxXMinYCorner | CoreAnimation.CACornerMask.MinXMinYCorner;
-            ChildViewController.View.Layer.CornerRadius = 10;
-            ChildViewController.View.Layer.MasksToBounds = true;
+
+            if (RoundTopCorner)
+            {
+                ChildViewController.View.Layer.MaskedCorners = CoreAnimation.CACornerMask.MaxXMinYCorner | CoreAnimation.CACornerMask.MinXMinYCorner;
+                ChildViewController.View.Layer.CornerRadius = 10;
+                ChildViewController.View.Layer.MasksToBounds = true;
+            }
 
             ChildViewController.DidMoveToParentViewController(this);
         }
