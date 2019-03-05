@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BottomSheetView", "BottomSheetView\BottomSheetView.csproj", "{18F56554-E52D-468E-B291-F61CCE337F67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BottomSheetView.Test", "BottomSheetView.Test\BottomSheetView.Test.csproj", "{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -19,5 +21,13 @@ Global
 		{18F56554-E52D-468E-B291-F61CCE337F67}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{18F56554-E52D-468E-B291-F61CCE337F67}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{18F56554-E52D-468E-B291-F61CCE337F67}.Debug|iPhone.Build.0 = Debug|iPhone
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Release|iPhone.ActiveCfg = Release|iPhone
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Release|iPhone.Build.0 = Release|iPhone
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{AEE55281-EB80-4842-9259-9E4C5C7A1EBD}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 EndGlobal
