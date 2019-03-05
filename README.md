@@ -32,7 +32,7 @@ __The constructor is_ `new BottomSheetViewController(controller, sizes)`. Sizes 
 ```csharp
 var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("ChildViewController");
 
-var bottomSheetController = BottomSheetViewController(controller)
+var bottomSheetController = new BottomSheetViewController(controller)
 
 this.PresentModalViewController(bottomSheetController, false);
 //It is important to set animated to false or it behaves weird currently
@@ -45,7 +45,7 @@ var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("
 
 SheetSize[] sheetSizes = { SheetSize.Fixed(300f), SheetSize.FullScreen };
 
-var bottomSheetController = BottomSheetViewController(controller)
+var bottomSheetController = new BottomSheetViewController(controller)
 bottomSheetController.DismissOnBackgroundTap = false;
 bottomSheetController.RoundTopCorner = false;
 
