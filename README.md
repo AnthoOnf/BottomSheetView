@@ -25,16 +25,16 @@ The bottom sheet tries to be smart about the height it takes. If the view contro
 
 Using a BottomSheetView is simple.
 
-__The constructor is_ `new BottomShetView(controller, sizes)`. Sizes is optional, but if specified, the first size in the array will determine the initial size of the sheet, and the others sizes will be all the sizes that the component can take._
+__The constructor is_ `new BottomSheetViewController(controller, sizes)`. Sizes is optional, but if specified, the first size in the array will determine the initial size of the sheet, and the others sizes will be all the sizes that the component can take._
 
 ****Using default settings with fixed height****
 
 ```csharp
 var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("ChildViewController");
 
-var bottomSheetController = SheetViewController(controller)
+var bottomSheetController = BottomSheetViewController(controller)
 
-this.PresentModalViewController(bottomSheetController, false)
+this.PresentModalViewController(bottomSheetController, false);
 //It is important to set animated to false or it behaves weird currently
 ```
 
@@ -45,11 +45,11 @@ var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("
 
 SheetSize[] sheetSizes = { SheetSize.Fixed(300f), SheetSize.FullScreen };
 
-var bottomSheetController = SheetViewController(controller)
+var bottomSheetController = BottomSheetViewController(controller)
 bottomSheetController.DismissOnBackgroundTap = false;
 bottomSheetController.RoundTopCorner = false;
 
-this.PresentModalViewController(bottomSheetController, false)
+this.PresentModalViewController(bottomSheetController, false);
 ```
 
 ## Settings
