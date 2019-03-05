@@ -79,3 +79,12 @@ this.bottomSheetViewController?.HandleScrollView(this.scrollView) // or tableVie
 
 }
 ```
+
+
+## Nuget
+
+[![NuGet](https://img.shields.io/nuget/v/BottomSheetView.svg?label=Nuget)](https://www.nuget.org/packages/BottomSheetView/)
+
+```
+PM> Install-Package BottomSheetView -Version 1.0.1
+```
